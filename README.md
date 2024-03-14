@@ -1,4 +1,9 @@
-# EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
+## EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
+
+## DATE : 14-03-2024
+## NAME : VAISHNAVI M																		             
+## ROLLNUMBER :  212221040175
+## DEPARTMENT : CSE
 
 ### AIM
 To interface an Analog output (servo motor) and modify the angular displacement of the servo using PWM signal .
@@ -67,14 +72,45 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+```
+#include<Servo.h>
+Servo s1;
+int pos =0;
 
+void setup()
+{
+  s1.attach(9);
+  Serial.begin(9600);
+}
 
+void loop()
+{
+  for(pos=0;pos<=180;pos+=1)
+  {
+    s1.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+  }
+  for(pos=180;pos>=0;pos-=1)
+  {
+    s1.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+  }
+}
+``` 
 
+### CIRCUIT DIAGRAM
 
+![image](https://github.com/Vaish-1011/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/135130074/ba6ec42c-e3f6-408a-863e-92483193fd5a)
 
+### SCHEMATIC DIAGRAM
 
+![image](https://github.com/Vaish-1011/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/135130074/12342236-0bd7-4f69-821a-d6dfd242f77c)
 
+![image](https://github.com/Vaish-1011/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/135130074/064a7be6-31eb-4bf2-97ec-036402bbae9a)
 
 
 ### RESULTS: 
